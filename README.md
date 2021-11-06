@@ -37,12 +37,15 @@ Help UCSB students locate some important amenities on campus, which are bathroom
 ### 2. Screen Archetypes
 
 * [Home screen]
-   * List of amenities (bathroom and study rooms)
+   * List of amenities (bathroom and study rooms) maybe instead of just a home page there can be two pages, as described below
 * [Map of UCSB]
    * contains color codded pins on where the bathroom and study room are on UCSB campus
-* [list third screen here]
-   * [list associated required story here]
-   * ...
+* [Restrooms]
+   * list view of restrooms, with a search feature
+* [Study locs]
+   * list view of study locations, with overview for each location 
+* [Settings]
+   * settings tab to change gender preferences and other things to change the priority ordering/ filtering for study locations and bathrooms
 
 ### 3. Navigation
 
@@ -50,13 +53,11 @@ Help UCSB students locate some important amenities on campus, which are bathroom
 
 * Home: List view of locations, e.g bathrooms
 * Map: Map view, has color-coded pins that mark the location 
-* [fill out your third tab]
+* Study locs 
+* Restrooms
+* Settings
 
 **Flow Navigation** (Screen to Screen)
-
-* Home: List View
-   * Map: If someone selects a location on the list view, then the screen goes to Map, showing the pinned location on the map.
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Study locs -> map screen
+* Restrooms -> map screen 
+* Settings -> Toggle settings
