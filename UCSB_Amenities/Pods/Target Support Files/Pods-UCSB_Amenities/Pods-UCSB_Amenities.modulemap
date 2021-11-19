@@ -1,0 +1,6 @@
+framework module Pods_UCSB_Amenities {
+  umbrella header "Pods-UCSB_Amenities-umbrella.h"
+
+  export *
+  module * { export * }
+}
