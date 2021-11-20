@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class StudyLocationsViewController: UIViewController {
+class StudyLocationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
    
     @IBOutlet var tableView: UITableView!
@@ -19,10 +19,9 @@ class StudyLocationsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
