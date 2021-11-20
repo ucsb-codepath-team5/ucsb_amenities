@@ -150,7 +150,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="Stf-c3-H1x" eventType="touchUpInside" id="g3P-hP-SYo"/>
                                 </connections>
@@ -160,7 +160,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Sign In"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Sign In"/>
                                 <connections>
                                     <action selector="onSignIn:" destination="Stf-c3-H1x" eventType="touchUpInside" id="XTb-Vc-u36"/>
                                 </connections>
