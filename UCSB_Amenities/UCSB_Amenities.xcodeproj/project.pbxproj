@@ -23,6 +23,8 @@
 		4330FBAC2747386000F79876 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330FBAB2747386000F79876 /* LocationCell.swift */; };
 		605575E6FA73B91EA4C1525F /* Pods_UCSB_AmenitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBE0CF2E267C15C1188C400 /* Pods_UCSB_AmenitiesTests.framework */; };
 		7384B7125A5C5B71E42336A0 /* Pods_UCSB_Amenities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D60882BB19BBC4BA7DCEA7 /* Pods_UCSB_Amenities.framework */; };
+		88B8BEA227498F5D00307FA0 /* RestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8BEA127498F5D00307FA0 /* RestroomViewController.swift */; };
+		88B8BEA42749930000307FA0 /* RestroomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8BEA32749930000307FA0 /* RestroomCell.swift */; };
 		8C0D010371E12B5AB1A181F4 /* Pods_UCSB_Amenities_UCSB_AmenitiesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F2AF5427893B32F21082AFB /* Pods_UCSB_Amenities_UCSB_AmenitiesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		5C68870C94B900F5CD3C0DF3 /* Pods-UCSB_AmenitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_AmenitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-UCSB_AmenitiesTests/Pods-UCSB_AmenitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70F0A599E291984DD9ACB1EF /* Pods-UCSB_Amenities-UCSB_AmenitiesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_Amenities-UCSB_AmenitiesUITests.debug.xcconfig"; path = "Target Support Files/Pods-UCSB_Amenities-UCSB_AmenitiesUITests/Pods-UCSB_Amenities-UCSB_AmenitiesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F2AF5427893B32F21082AFB /* Pods_UCSB_Amenities_UCSB_AmenitiesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSB_Amenities_UCSB_AmenitiesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88B8BEA127498F5D00307FA0 /* RestroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomViewController.swift; sourceTree = "<group>"; };
+		88B8BEA32749930000307FA0 /* RestroomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestroomCell.swift; sourceTree = "<group>"; };
 		8FBE0CF2E267C15C1188C400 /* Pods_UCSB_AmenitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCSB_AmenitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D39CC401FD0581A4D86D91 /* Pods-UCSB_Amenities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_Amenities.debug.xcconfig"; path = "Target Support Files/Pods-UCSB_Amenities/Pods-UCSB_Amenities.debug.xcconfig"; sourceTree = "<group>"; };
 		F2F12E3EDEE65FCD8C2F3C2D /* Pods-UCSB_AmenitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_AmenitiesTests.release.xcconfig"; path = "Target Support Files/Pods-UCSB_AmenitiesTests/Pods-UCSB_AmenitiesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				4330FBA72747318300F79876 /* PhotoCell.swift */,
 				4330FBA92747319E00F79876 /* DescriptionCell.swift */,
 				4330FBAB2747386000F79876 /* LocationCell.swift */,
+				88B8BEA127498F5D00307FA0 /* RestroomViewController.swift */,
+				88B8BEA32749930000307FA0 /* RestroomCell.swift */,
 			);
 			path = UCSB_Amenities;
 			sourceTree = "<group>";
@@ -423,7 +429,9 @@
 			files = (
 				4330FBA4274724F900F79876 /* LoginViewController.swift in Sources */,
 				4330FBAA2747319E00F79876 /* DescriptionCell.swift in Sources */,
+				88B8BEA227498F5D00307FA0 /* RestroomViewController.swift in Sources */,
 				4330FBA627472C7700F79876 /* StudyLocationsViewController.swift in Sources */,
+				88B8BEA42749930000307FA0 /* RestroomCell.swift in Sources */,
 				4330FB78274720F400F79876 /* ViewController.swift in Sources */,
 				4330FB74274720F400F79876 /* AppDelegate.swift in Sources */,
 				4330FBA82747318300F79876 /* PhotoCell.swift in Sources */,

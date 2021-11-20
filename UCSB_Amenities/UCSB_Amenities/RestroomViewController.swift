@@ -1,17 +1,16 @@
 //
-//  StudyLocationsViewController.swift
+//  RestroomViewController.swift
 //  UCSB_Amenities
 //
-//  Created by Brian Ai on 11/18/21.
+//  Created by tisya on 11/20/21.
 //
 
 import UIKit
 import Parse
 
-class StudyLocationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class RestroomViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-   
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +19,7 @@ class StudyLocationsViewController: UIViewController, UITableViewDataSource, UIT
         
         tableView.dataSource = self
         tableView.delegate = self
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,15 +28,14 @@ class StudyLocationsViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell") as! LocationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestroomCell") as! RestroomCell
         cell.nameLabel.text = "Location Name"
         cell.locationLabel.text = "Map Location"
         cell.detailsLabel.text = "Description of location"
 
         return cell
     }
-
-    // function to logout
+    
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
         
@@ -46,4 +45,5 @@ class StudyLocationsViewController: UIViewController, UITableViewDataSource, UIT
         
         delegate.window?.rootViewController = loginViewController
     }
+
 }
