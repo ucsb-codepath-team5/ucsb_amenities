@@ -9,7 +9,6 @@
 
 ## Overview
 ### Description
-[Description of your app]
 Help UCSB students locate some important amenities on campus, which are bathrooms and study rooms. 
 
 ### App Evaluation
