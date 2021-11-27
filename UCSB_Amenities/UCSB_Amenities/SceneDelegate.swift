@@ -22,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // users stay logged in
         if PFUser.current() != nil {
             let main = UIStoryboard(name: "Main", bundle: nil)
-            let studyNavigationController = main.instantiateViewController(withIdentifier: "StudyNavigationController")
-            window?.rootViewController = studyNavigationController
+            let tabNavigationController = main.instantiateViewController(withIdentifier: "TabController")
+            window?.rootViewController = tabNavigationController
         
         }
     }
