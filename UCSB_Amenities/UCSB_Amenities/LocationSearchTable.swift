@@ -12,6 +12,8 @@ class LocationSearchTable: UITableViewController {
     
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
+    var handleMapSearchDelegate:HandleMapSearch? = nil
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,19 +30,16 @@ class LocationSearchTable: UITableViewController {
 
 }
 
-
 extension LocationSearchTable : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        self.tableView.reloadData()
-    }
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
         guard let mapView = mapView,
             let searchBarText = searchController.searchBar.text else { return }
+
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchBarText
         request.region = mapView.region
         let search = MKLocalSearch(request: request)
+
         search.start { response, _ in
             guard let response = response else {
                 return
@@ -51,6 +50,15 @@ extension LocationSearchTable : UISearchResultsUpdating {
     }
 }
 
+// limiting locations to local ones only
+//override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+//        let selectedItem = matchingItems[indexPath.row].placemark
+//        cell.textLabel?.text = selectedItem.locality
+//        cell.detailTextLabel?.text = "" //parseAddress(selectedItem: selectedItem)
+//        return cell
+//    }
 
 extension LocationSearchTable {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,3 +74,11 @@ extension LocationSearchTable {
         return cell
     }
 }
+
+//extension LocationSearchTable {
+//     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let selectedItem = matchingItems[indexPath.row].placemark
+//        handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+//        dismiss(animated: true, completion: nil)
+//    }
+//}

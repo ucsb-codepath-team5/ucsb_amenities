@@ -8,49 +8,52 @@
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController {
 
     @IBOutlet var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
     
     var resultSearchController:UISearchController? = nil
+    var selectedPin:MKPlacemark? = nil
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        checkLocationServices()
-
 
         // set the region to display, this also sets a correct zoom level
         // set starting center location in Santa Barbara
         let centerLocation = CLLocation(latitude: 34.4140, longitude: -119.8489)
         goToLocation(location: centerLocation)
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
         
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
         
-        
-        // configures search bar and embeds into navigation bar
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
-        navigationItem.titleView = resultSearchController?.searchBar
+        navigationItem.searchController = resultSearchController
+
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        //resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
         
+        locationSearchTable.mapView = mapView
         
-        resultSearchController?.hidesNavigationBarDuringPresentation = false // search bar accessible at all times
-        definesPresentationContext = true // modal overlay will not cover search bar (not working rn)
-        
-        
-        locationSearchTable.mapView = mapView // This passes along a handle of the mapView from the main View Controller onto the locationSearchTable.
-        
+        //locationSearchTable.handleMapSearchDelegate = self
 
 
-        
     }
     
     func goToLocation(location: CLLocation) {
@@ -59,34 +62,70 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
     }
     
-    func checkLocationServices() {
-      if CLLocationManager.locationServicesEnabled() {
-        checkLocationAuthorization()
-      } else {
-        // Show alert letting the user know they have to turn this on.
-      }
-    }
-    
-    // for processing locationManager responses
-
-    func checkLocationAuthorization() {
-      switch CLLocationManager.authorizationStatus() {
-      case .authorizedWhenInUse:
-        mapView.showsUserLocation = true // user will be shown as a blue dot!
-       case .denied: // Show alert telling users how to turn on permissions
-       break
-      case .notDetermined:
-        locationManager.requestWhenInUseAuthorization()
-        mapView.showsUserLocation = true
-      case .restricted: // Show an alert letting them know what’s up
-       break
-      case .authorizedAlways:
-       break
-      @unknown default:
-          print("fatal error")
-      }
-    }
-
 }
+
+extension MapViewController : CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error:: \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        if locations.first != nil {
+            print("location:: (location)")
+        }
+    }
+}
+
+//extension MapViewController: HandleMapSearch {
+//    func dropPinZoomIn(placemark:MKPlacemark){
+//        // cache the pin
+//        selectedPin = placemark
+//        // clear existing pins
+//        mapView.removeAnnotations(mapView.annotations)
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = placemark.coordinate
+//        annotation.title = placemark.name
+//        if let city = placemark.locality,
+//        let state = placemark.administrativeArea {
+//            annotation.subtitle = "(city) (state)"
+//        }
+//        mapView.addAnnotation(annotation)
+//        let span = MKCoordinateSpanMake(0.05, 0.05)
+//        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+//        mapView.setRegion(region, animated: true)
+//    }
+//}
+
+
+//extension MapViewController : MKMapViewDelegate {
+//
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+//
+//        guard !(annotation is MKUserLocation) else { return nil }
+//        let reuseId = "pin"
+//        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+//        if pinView == nil {
+//            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//        }
+//        pinView?.pinTintColor = UIColor.orange
+//        pinView?.canShowCallout = true
+//        let smallSquare = CGSize(width: 30, height: 30)
+//        let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
+//        button.setBackgroundImage(UIImage(named: "car"), for: .normal)
+//        button.addTarget(self, action: #selector(MapViewController.getDirections), for: .touchUpInside)
+//        pinView?.leftCalloutAccessoryView = button
+//
+//        return pinView
+//    }
+//}
+
 
 

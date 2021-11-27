@@ -364,7 +364,7 @@
         <scene sceneID="zsb-Jp-0HK">
             <objects>
                 <viewController id="fHN-WA-TNW" customClass="MapViewController" customModule="UCSB_Amenities" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="h81-f3-XFh">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="h81-f3-XFh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
