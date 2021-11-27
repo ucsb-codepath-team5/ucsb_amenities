@@ -1,3 +1,17 @@
+# User Story Milestone 2
+As a user, I would like to be able to search up locations I remember in the map tab and have the location pinned onto the map so I can navigate to them. I would also like to have my location shown. 
+
+# Discussion 
+We have several options for this, we can either use google maps, apple maps, or any other map API, when we decide on this, please update this so it discusses the details of the API
+
+# Acceptance Criteria
+- [x] User can see a map of the campus, can zoom in, etc 
+- [x] User can search for locations (based on the sheety backend info)
+- [x] User can see pinned locations as well as their own location
+
+# Implementations To-Do's
+- [x] Choose an API to use for the map
+- [x] Add a tableview? (may be something else) with the search feature
 
 # UCSB AMENITIES
 
