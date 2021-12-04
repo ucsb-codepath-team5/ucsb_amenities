@@ -1,17 +1,17 @@
-# User Story Milestone 2
-As a user, I would like to be able to search up locations I remember in the map tab and have the location pinned onto the map so I can navigate to them. I would also like to have my location shown. 
+# User Story Milestone 3
+As a developer, I would like to be able to periodically add new locations to the locations and restroom tableviews
 
 # Discussion 
-We have several options for this, we can either use google maps, apple maps, or any other map API, when we decide on this, please update this so it discusses the details of the API
+We will use the Parse backend from back4apps to store the information of new locations as new classes with strings and doubles for the information relating to the locations
 
 # Acceptance Criteria
-- [x] User can see a map of the campus, can zoom in, etc 
-- [x] User can search for locations (based on the sheety backend info)
-- [x] User can see pinned locations as well as their own location
+- [x] User can see locations added to the map
+- [x] Developers can add new object instances to the backend DB server
+
 
 # Implementations To-Do's
-- [x] Choose an API to use for the map
-- [x] Add a tableview? (may be something else) with the search feature
+- [x] Set up new classes in parse
+- [x] Change the tableview to take in data from parse 
 
 # UCSB AMENITIES
 
