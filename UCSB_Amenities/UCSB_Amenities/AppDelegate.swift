@@ -12,15 +12,27 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let parseConfig = ParseClientConfiguration {
-                    $0.applicationId = "f8rLbBwctVw07FpSI6zOHZQ9eI8qMiyVVlZkYoLB"
-                    $0.clientKey = "Oe46vKJk3rZQTnfnzN6Ho5szBYn75hsyk0Elsowf"
-                    $0.server = "https://parseapi.back4app.com"
-            }
-        Parse.initialize(with: parseConfig)
+        
+        var keys: NSDictionary?
+
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist") {
+               keys = NSDictionary(contentsOfFile: path)
+        }
+        
+        if let dict = keys {
+            let applicationId = dict["parseApplicationID"] as? String
+            let clientKey = dict["parseClientKey"] as? String
+                    
+            // Override point for customization after application launch.
+            let parseConfig = ParseClientConfiguration {
+                        $0.applicationId = applicationId
+                        $0.clientKey = clientKey
+                        $0.server = "https://parseapi.back4app.com"
+                }
+            Parse.initialize(with: parseConfig)
+        }
+        
         return true
     }
 

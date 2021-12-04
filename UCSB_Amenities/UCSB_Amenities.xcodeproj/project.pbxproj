@@ -24,6 +24,7 @@
 		4373A1CD2751A2EA003964D7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373A1CC2751A2EA003964D7 /* MapViewController.swift */; };
 		4373A1D12751AFD7003964D7 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373A1D02751AFD7003964D7 /* LocationSearchTable.swift */; };
 		4373A1D32751B575003964D7 /* MapSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373A1D22751B575003964D7 /* MapSearchCell.swift */; };
+		43D65B31275ADC9C005C0DE6 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43D65B30275ADC9C005C0DE6 /* Keys.plist */; };
 		605575E6FA73B91EA4C1525F /* Pods_UCSB_AmenitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBE0CF2E267C15C1188C400 /* Pods_UCSB_AmenitiesTests.framework */; };
 		7384B7125A5C5B71E42336A0 /* Pods_UCSB_Amenities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D60882BB19BBC4BA7DCEA7 /* Pods_UCSB_Amenities.framework */; };
 		88B8BEA227498F5D00307FA0 /* RestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8BEA127498F5D00307FA0 /* RestroomViewController.swift */; };
@@ -71,6 +72,7 @@
 		4373A1CC2751A2EA003964D7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4373A1D02751AFD7003964D7 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		4373A1D22751B575003964D7 /* MapSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchCell.swift; sourceTree = "<group>"; };
+		43D65B30275ADC9C005C0DE6 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		5364265090662EE90A4A0487 /* Pods-UCSB_Amenities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_Amenities.release.xcconfig"; path = "Target Support Files/Pods-UCSB_Amenities/Pods-UCSB_Amenities.release.xcconfig"; sourceTree = "<group>"; };
 		5C68870C94B900F5CD3C0DF3 /* Pods-UCSB_AmenitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_AmenitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-UCSB_AmenitiesTests/Pods-UCSB_AmenitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70F0A599E291984DD9ACB1EF /* Pods-UCSB_Amenities-UCSB_AmenitiesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCSB_Amenities-UCSB_AmenitiesUITests.debug.xcconfig"; path = "Target Support Files/Pods-UCSB_Amenities-UCSB_AmenitiesUITests/Pods-UCSB_Amenities-UCSB_AmenitiesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4330FB7C274720F700F79876 /* Assets.xcassets */,
 				4330FB7E274720F700F79876 /* LaunchScreen.storyboard */,
 				4330FB81274720F700F79876 /* Info.plist */,
+				43D65B30275ADC9C005C0DE6 /* Keys.plist */,
 				4330FBA3274724F900F79876 /* LoginViewController.swift */,
 				4330FBA72747318300F79876 /* PhotoCell.swift */,
 				4330FBA92747319E00F79876 /* DescriptionCell.swift */,
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D65B31275ADC9C005C0DE6 /* Keys.plist in Resources */,
 				4330FB80274720F700F79876 /* LaunchScreen.storyboard in Resources */,
 				4330FB7D274720F700F79876 /* Assets.xcassets in Resources */,
 				4330FB7B274720F400F79876 /* Main.storyboard in Resources */,
